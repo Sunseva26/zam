@@ -1,37 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:background="@drawable/card_background"
-    android:elevation="4dp"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     android:padding="16dp">
     
-    <TextView
-        android:id="@+id/titleTextView"
+    <EditText
+        android:id="@+id/titleEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="Заголовок заметки"
+        android:inputType="textCapSentences"
         android:textColor="#212121"
-        android:textSize="18sp"
+        android:textColorHint="#9E9E9E"
+        android:textSize="20sp"
         android:textStyle="bold" />
     
-    <TextView
-        android:id="@+id/contentPreview"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#E0E0E0" />
+    
+    <EditText
+        android:id="@+id/contentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="Начните писать..."
+        android:inputType="textMultiLine"
+        android:textColor="#424242"
+        android:textColorHint="#BDBDBD"
+        android:textSize="16sp" />
+    
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="#757575"
-        android:textSize="14sp"
-        android:maxLines="2" />
-    
-    <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="8dp"
-        android:textColor="#9E9E9E"
-        android:textSize="12sp" />
+        android:gravity="end"
+        android:orientation="horizontal">
+        
+        <Button
+            android:id="@+id/setReminderButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Установить напоминание"
+            android:textColor="#1976D2" />
+        
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#1976D2"
+            android:text="Сохранить"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 </LinearLayout>
